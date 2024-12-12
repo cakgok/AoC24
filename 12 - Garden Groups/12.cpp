@@ -27,10 +27,6 @@ std::pair<int, int> dfs(std::vector<std::string>& garden, int r, int c, std::vec
     return {area, perimeter};
 }
 
-bool isPlant(char c) {
-    return c == 'T' || c == 'C' || c == 'G' || c == 'A';
-}
-
 std::pair<int, int> dfs_2(std::vector<std::string>& garden, int r, int c, std::vector<std::vector<bool>>& visit, char plant) {
     auto isPlant = [&](int row, int col) -> bool { 
         if(row < 0 || row >= garden.size() || col < 0 || col >= garden[row].size()) return false;
