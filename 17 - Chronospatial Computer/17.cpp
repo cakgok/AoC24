@@ -117,7 +117,7 @@ int main() {
     // backtrack if needed
 
     int targetPtr = instructions.size() - 1;
-    std::cout << findInitialValue(6, instructions, targetPtr) << std::endl;
+    findInitialValue(6, instructions, targetPtr);
 
     // part2
     // instructions = {2,4,1,3,7,5,0,3,4,1,1,5,5,5,3,0};
