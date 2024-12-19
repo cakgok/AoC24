@@ -120,10 +120,8 @@ bool moveLargeCasesVertical(std::vector<std::string>& grid, int x, int y, char d
     else if (grid[yNext][xNext] == '#' || grid[yOtherNext][xOtherNext] == '#') return false;
     else {
         bool moved;
-        if(grid[yNext][xNext] == '[' && grid[yOtherNext][xOtherNext] == ']' || grid[yNext][xNext] == ']' && grid[yOtherNext][xOtherNext] == '[') {
-        //if(grid[yNext][xNext] == ']' && grid[yOtherNext][xOtherNext] == '[') {
-        
-            moved = moveLargeCasesVertical(grid, xNext, yNext, dir) && moveLargeCasesVertical(grid, xOtherNext, yOtherNext, dir);
+        if((grid[yNext][xNext] == '[' && grid[yNext][xOtherNext] == ']') || (grid[yNext][xNext] == ']' && grid[yNext][xOtherNext] == '[')) {        
+            moved = moveLargeCasesVertical(grid, xNext, yNext, dir) && moveLargeCasesVertical(grid, xOtherNext, yNext, dir);
         }
         else {
             std::cout << "non mix case" << std::endl;
